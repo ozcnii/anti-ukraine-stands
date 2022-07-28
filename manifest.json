@@ -8,6 +8,7 @@
   "author": "Winderton fun-club",
   "content_scripts": [
     {
+      "run_at": "document_start",
       "matches": ["<all_urls>"],
       "js": ["main.js"]
     }
