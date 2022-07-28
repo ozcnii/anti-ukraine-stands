@@ -28,12 +28,16 @@ const remove_elements = () => {
 
 let currentHref = location.href;
 
-const handler = () => {
-  if (currentHref !== location.href) {
-    currentHref = location.href;
+const observer = new MutationObserver(() => {
+  if (currentHref !== document.location.href) {
+    currentHref = document.location.href;
     remove_elements();
   }
-};
+});
 
-remove_elements();
-setInterval(handler, 1000);
+observer.observe(document.querySelector("body"), {
+  childList: true,
+  subtree: true,
+});
+
+window.onload = remove_elements;
