@@ -1,11 +1,9 @@
-const get_elements_by_inner = (word) => {
-  const reg = new RegExp(word, "gim");
-  return [
+const get_elements_by_inner = (word) =>
+  [
     ...document.querySelectorAll("span"),
     ...document.querySelectorAll("p"),
     ...document.querySelectorAll("a"),
-  ].filter((elem) => !!elem.textContent.match(reg));
-};
+  ].filter((elem) => elem.textContent.includes(word));
 
 const remove_elements = () => {
   const urkaine_stand_elements = get_elements_by_inner("🇺🇦");
@@ -28,8 +26,9 @@ const remove_elements = () => {
   });
 };
 
+let currentHref = location.href;
+
 const handler = () => {
-  let currentHref = location.href;
   if (currentHref !== location.href) {
     currentHref = location.href;
     remove_elements();
