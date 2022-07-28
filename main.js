@@ -9,11 +9,7 @@ const remove_elements = () => {
   deepest && deepest.closest('div').remove();
 };
 
-let currentHref = location.href;
-
-const observer = new MutationObserver(() => {
-  remove_elements();
-});
+const observer = new MutationObserver(remove_elements);
 
 document.addEventListener("DOMContentLoaded", () => {
   observer.observe(document.querySelector("body"), {
