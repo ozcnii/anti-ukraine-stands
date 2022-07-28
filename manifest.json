@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Anti Ukraine Stands",
+  "version": "0.0.1",
+  "action": {},
+  "description": "Anti Ukraine Stands",
+  "icons": {},
+  "author": "Winderton fun-club",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["main.js"]
+    }
+  ]
+}
