@@ -12,7 +12,7 @@ const remove_elements = () => {
 const observer = new MutationObserver(remove_elements);
 
 document.addEventListener("DOMContentLoaded", () => {
-  observer.observe(document.querySelector("body"), {
+  observer.observe(document.body, {
     childList: true,
     subtree: true,
   });
