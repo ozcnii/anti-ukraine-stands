@@ -8,9 +8,7 @@ const remove_elements = () => {
   ).iterateNext();
   deepest && deepest.closest('div').remove();
 };
-
 const observer = new MutationObserver(remove_elements);
-
 document.addEventListener("DOMContentLoaded", () => {
   observer.observe(document.body, {
     childList: true,
